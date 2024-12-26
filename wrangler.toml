@@ -1,0 +1,23 @@
+name = "maintenance-page"
+main = "maintenance-worker.js"
+compatibility_date = "2023-12-26"
+
+# Configure your account ID and zone ID
+account_id = "your-account-id"
+# workers_dev = true  # Enable for testing on workers.dev subdomain
+
+# Variables
+[vars]
+MAINTENANCE_MODE = false
+
+# Production environment
+[env.production]
+# Add your domain bindings here
+routes = [
+    { pattern = "*.yourdomain.com/*", zone_id = "your-zone-id" },
+    { pattern = "yourdomain.com/*", zone_id = "your-zone-id" }
+]
+
+# Development environment
+[env.development]
+vars = { MAINTENANCE_MODE = true }

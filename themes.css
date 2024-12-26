@@ -1,0 +1,753 @@
+/* Base theme variables */
+:root {
+    /* Default theme (Dark) */
+    --primary-color: #bf80ff;
+    --secondary-color: #ffffff;
+    --accent-color: #80ffff;
+    --background-color: rgba(10, 10, 10, 0.15);
+    --container-bg: rgba(20, 20, 20, 0.2);
+    --text-color: #e6e6e6;
+    --border-color: rgba(191, 128, 255, 0.15);
+    --button-gradient: linear-gradient(45deg, #bf80ff, #ff80ff);
+    --progress-gradient: linear-gradient(90deg, #bf80ff, #80ffff);
+    --error-border: rgba(191, 128, 255, 0.15);
+    --particle-characters: '❄,❅,❆,*,•';
+    --particle-color: rgba(255, 255, 255, 0.9);
+    --animation-name: fall;
+    --text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+                   0 0 20px rgba(191, 128, 255, 0.7);
+    --glitch-shadow: #bf80ff;
+    --status-text: #ffffff;
+    --value-text: #ffffff;
+    --header-text: #ffffff;
+    --log-text: #e6e6e6;
+    --info-text: #80ffff;
+    --success-text: #bf80ff;
+    --warning-text: #ffff80;
+    --error-text: #ff8080;
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --primary-color: #9600ff;
+    --secondary-color: #333333;
+    --accent-color: #00ffff;
+    --background-color: rgba(255, 255, 255, 0.15);
+    --container-bg: rgba(240, 240, 240, 0.2);
+    --text-color: #1a1a1a;
+    --border-color: rgba(150, 0, 255, 0.15);
+    --button-gradient: linear-gradient(45deg, #9600ff, #ff00ff);
+    --progress-gradient: linear-gradient(90deg, #9600ff, #00ffff);
+    --error-border: rgba(150, 0, 255, 0.15);
+    --particle-characters: '❄,❅,❆,*,•';
+    --particle-color: rgba(150, 0, 255, 0.8);
+    --animation-name: fall;
+    --text-shadow: 0 0 10px rgba(150, 0, 255, 0.7);
+    --glitch-shadow: #9600ff;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --primary-color: #bf80ff;
+    --secondary-color: #ffffff;
+    --accent-color: #80ffff;
+    --background-color: rgba(10, 10, 10, 0.15);
+    --container-bg: rgba(20, 20, 20, 0.2);
+    --text-color: #e6e6e6;
+    --border-color: rgba(191, 128, 255, 0.15);
+    --button-gradient: linear-gradient(45deg, #bf80ff, #ff80ff);
+    --progress-gradient: linear-gradient(90deg, #bf80ff, #80ffff);
+    --error-border: rgba(191, 128, 255, 0.15);
+    --particle-characters: '❄,❅,❆,*,•';
+    --particle-color: rgba(255, 255, 255, 0.9);
+    --animation-name: fall;
+    --text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+                   0 0 20px rgba(191, 128, 255, 0.7);
+    --glitch-shadow: #bf80ff;
+    --status-text: #ffffff;
+    --value-text: #ffffff;
+    --header-text: #ffffff;
+    --log-text: #e6e6e6;
+    --info-text: #80ffff;
+    --success-text: #bf80ff;
+    --warning-text: #ffff80;
+    --error-text: #ff8080;
+}
+
+/* Christmas Theme (December) */
+[data-theme="christmas"] {
+    --primary-color: #ff4747;
+    --secondary-color: #4caf50;
+    --accent-color: #ffd700;
+    --background-color: rgba(8, 24, 32, 0.15);
+    --container-bg: rgba(16, 32, 40, 0.2);
+    --text-color: #ff4747;
+    --border-color: rgba(255, 215, 0, 0.15);
+    --button-gradient: linear-gradient(45deg, #ff4747, #4caf50);
+    --progress-gradient: linear-gradient(90deg, #ff4747, #ffd700);
+    --error-border: rgba(255, 71, 71, 0.15);
+    --particle-characters: '❄,🎄,⭐,🎁,✨';
+    --particle-color: rgba(255, 255, 255, 0.9);
+    --animation-name: snowfall;
+    --text-shadow: 0 0 10px rgba(255, 71, 71, 0.7),
+                   0 0 20px rgba(255, 71, 71, 0.5);
+    --glitch-shadow: #ff4747;
+    --status-text: #ff4747;
+    --value-text: #ffd700;
+    --header-text: #ff4747;
+    --log-text: #ff4747;
+    --info-text: #4caf50;
+    --success-text: #ffd700;
+    --warning-text: #ff9800;
+    --error-text: #ff4747;
+    --neon-glow: 0 0 5px rgba(255, 71, 71, 0.3),
+                 0 0 10px rgba(255, 71, 71, 0.2),
+                 0 0 15px rgba(76, 175, 80, 0.1),
+                 0 0 20px rgba(255, 215, 0, 0.05);
+}
+
+/* New Year Theme (January) */
+[data-theme="new-year"] {
+    --primary-color: #ffd700;
+    --secondary-color: #00ffff;
+    --accent-color: #ff69b4;
+    --background-color: rgba(0, 0, 0, 0.15);
+    --container-bg: rgba(20, 20, 20, 0.2);
+    --text-color: #ffffff;
+    --border-color: rgba(255, 215, 0, 0.15);
+    --button-gradient: linear-gradient(45deg, #ffd700, #00ffff);
+    --progress-gradient: linear-gradient(90deg, #ffd700, #ff69b4);
+    --error-border: rgba(255, 215, 0, 0.15);
+    --particle-characters: '✨,⭐,✯,✡,⚡';
+    --particle-color: rgba(255, 215, 0, 0.8);
+    --animation-name: sparkle;
+    --text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Valentine's Theme (February) */
+[data-theme="valentine"] {
+    --primary-color: #ff69b4;
+    --secondary-color: #ff1493;
+    --accent-color: #ffffff;
+    --background-color: rgba(26, 0, 17, 0.15);
+    --container-bg: rgba(26, 0, 17, 0.2);
+    --text-color: #ffffff;
+    --border-color: rgba(255, 105, 180, 0.15);
+    --button-gradient: linear-gradient(45deg, #ff69b4, #ff1493);
+    --progress-gradient: linear-gradient(90deg, #ff69b4, #ff1493);
+    --error-border: rgba(255, 105, 180, 0.15);
+    --particle-characters: '❤,💕,💗,💖,💝';
+    --particle-color: rgba(255, 105, 180, 0.8);
+    --animation-name: float;
+    --text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+}
+
+/* Spring Theme (March-May) */
+[data-theme="spring"] {
+    --primary-color: #98fb98;
+    --secondary-color: #ffd700;
+    --accent-color: #ff69b4;
+    --background-color: rgba(10, 26, 10, 0.15);
+    --container-bg: rgba(10, 26, 10, 0.2);
+    --text-color: #ffffff;
+    --border-color: rgba(152, 251, 152, 0.15);
+    --button-gradient: linear-gradient(45deg, #98fb98, #ffd700);
+    --progress-gradient: linear-gradient(90deg, #98fb98, #ff69b4);
+    --error-border: rgba(152, 251, 152, 0.15);
+    --particle-characters: '🌸,🌺,🌷,🌹,🌼';
+    --particle-color: rgba(255, 192, 203, 0.8);
+    --animation-name: flutter;
+    --text-shadow: 0 0 10px rgba(152, 251, 152, 0.7);
+}
+
+/* Summer Theme (June-August) */
+[data-theme="summer"] {
+    --primary-color: #ffd700;
+    --secondary-color: #ff6b6b;
+    --accent-color: #4169e1;
+    --background-color: rgba(10, 10, 26, 0.15);
+    --container-bg: rgba(10, 10, 26, 0.2);
+    --text-color: #ffffff;
+    --border-color: rgba(255, 215, 0, 0.15);
+    --button-gradient: linear-gradient(45deg, #ffd700, #ff6b6b);
+    --progress-gradient: linear-gradient(90deg, #ffd700, #4169e1);
+    --error-border: rgba(255, 215, 0, 0.15);
+    --particle-characters: '☀,⭐,✨,🌟,⚡';
+    --particle-color: rgba(255, 215, 0, 0.8);
+    --animation-name: shine;
+    --text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Autumn Theme (September-November) */
+[data-theme="autumn"] {
+    --primary-color: #ff6b6b;
+    --secondary-color: #ffd700;
+    --accent-color: #8b4513;
+    --background-color: rgba(26, 10, 10, 0.15);
+    --container-bg: rgba(26, 10, 10, 0.2);
+    --text-color: #ffffff;
+    --border-color: rgba(255, 107, 107, 0.15);
+    --button-gradient: linear-gradient(45deg, #ff6b6b, #ffd700);
+    --progress-gradient: linear-gradient(90deg, #ff6b6b, #8b4513);
+    --error-border: rgba(255, 107, 107, 0.15);
+    --particle-characters: '🍁,🍂,🍃,🌰,🍄';
+    --particle-color: rgba(255, 107, 107, 0.8);
+    --animation-name: fall;
+    --text-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+}
+
+/* Cyberpunk Theme */
+[data-theme="cyberpunk"] {
+    --primary-color: #bf80ff;
+    --secondary-color: #ff80ff;
+    --accent-color: #80ffff;
+    --background-color: rgba(10, 0, 20, 0.15);
+    --container-bg: rgba(20, 0, 40, 0.2);
+    --text-color: #e6e6e6;
+    --border-color: rgba(191, 128, 255, 0.15);
+    --button-gradient: linear-gradient(45deg, #bf80ff, #ff80ff);
+    --progress-gradient: linear-gradient(90deg, #bf80ff, #ff80ff);
+    --error-border: rgba(191, 128, 255, 0.15);
+    --success-color: #ff80ff;
+    --warning-color: #80ffff;
+    --info-color: #bf80ff;
+    --error-color: #ff80ff;
+    --particle-color: rgba(191, 128, 255, 0.8);
+    --text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+                   0 0 20px rgba(191, 128, 255, 0.7),
+                   0 0 30px rgba(191, 128, 255, 0.3);
+    --neon-glow: 0 0 5px rgba(191, 128, 255, 0.3),
+                 0 0 10px rgba(191, 128, 255, 0.2),
+                 0 0 15px rgba(191, 128, 255, 0.1),
+                 0 0 20px rgba(255, 128, 255, 0.05);
+}
+
+/* Animation Keyframes */
+@keyframes fall {
+    0% { transform: translateY(-100%) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(-100%) scale(1) rotate(0deg); }
+    50% { transform: translateY(50vh) scale(1.2) rotate(180deg); }
+    100% { transform: translateY(100vh) scale(1) rotate(360deg); }
+}
+
+@keyframes float {
+    0% { transform: translateY(-100%) translateX(0) rotate(0deg); }
+    50% { transform: translateY(50vh) translateX(20px) rotate(180deg); }
+    100% { transform: translateY(100vh) translateX(0) rotate(360deg); }
+}
+
+@keyframes flutter {
+    0% { transform: translateY(-100%) translateX(0) rotate(0deg); }
+    25% { transform: translateY(25vh) translateX(10px) rotate(90deg); }
+    50% { transform: translateY(50vh) translateX(-10px) rotate(180deg); }
+    75% { transform: translateY(75vh) translateX(10px) rotate(270deg); }
+    100% { transform: translateY(100vh) translateX(0) rotate(360deg); }
+}
+
+@keyframes shine {
+    0% { transform: translateY(-100%) scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(50vh) scale(1.5) rotate(180deg); opacity: 0.8; }
+    100% { transform: translateY(100vh) scale(1) rotate(360deg); opacity: 1; }
+}
+
+@keyframes borderPulse {
+    0% {
+        border-color: rgba(255, 0, 255, 0.3);
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    }
+    50% {
+        border-color: rgba(191, 128, 255, 0.5);
+        box-shadow: 0 0 20px rgba(191, 128, 255, 0.7);
+    }
+    100% {
+        border-color: rgba(0, 255, 255, 0.3);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+}
+
+@keyframes textFlicker {
+    0% {
+        text-shadow: 
+            0 0 10px var(--primary-color),
+            0 0 20px var(--primary-color),
+            0 0 30px var(--accent-color);
+    }
+    50% {
+        text-shadow: 
+            0 0 15px var(--primary-color),
+            0 0 25px var(--primary-color),
+            0 0 35px var(--accent-color);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px var(--primary-color),
+            0 0 20px var(--primary-color),
+            0 0 30px var(--accent-color);
+    }
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes christmasGlow {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 71, 71, 0.1),
+                    0 0 30px rgba(76, 175, 80, 0.05);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.15),
+                    0 0 40px rgba(255, 215, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 71, 71, 0.1),
+                    0 0 30px rgba(76, 175, 80, 0.05);
+    }
+}
+
+@keyframes christmasPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 71, 71, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 71, 71, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 71, 71, 0);
+    }
+}
+
+@keyframes christmasTextGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 71, 71, 0.5),
+                     0 0 20px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(76, 175, 80, 0.6),
+                     0 0 30px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 71, 71, 0.5),
+                     0 0 20px rgba(76, 175, 80, 0.3);
+    }
+}
+
+@keyframes christmasProgress {
+    0% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: -100% 0%;
+    }
+}
+
+@keyframes flyAcross {
+    0% {
+        transform: translateX(-100%) translateY(var(--fly-y)) rotate(var(--rotate-start));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw) translateY(var(--fly-y)) rotate(var(--rotate-end));
+        opacity: 0;
+    }
+}
+
+@keyframes bobUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Theme-specific styles */
+.container {
+    background: var(--container-bg);
+    border-color: var(--border-color);
+}
+
+.ascii-art {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.glitch {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--glitch-shadow);
+}
+
+.status-indicator {
+    background: var(--primary-color);
+}
+
+.progress-fill {
+    background: var(--progress-gradient);
+}
+
+.refresh-button {
+    background: var(--button-gradient);
+    color: var(--text-color);
+}
+
+.error-log {
+    border-color: var(--error-border);
+}
+
+.particle {
+    color: var(--particle-color);
+    animation-name: var(--animation-name);
+}
+
+/* Cyberpunk elements */
+[data-theme="cyberpunk"] .container {
+    border: 1px solid var(--border-color);
+    box-shadow: var(--neon-glow);
+}
+
+[data-theme="cyberpunk"] .status-container {
+    border: 1px solid var(--border-color);
+    box-shadow: var(--neon-glow);
+}
+
+[data-theme="cyberpunk"] .log-entry {
+    border-left: 2px solid var(--primary-color);
+    box-shadow: -2px 0 5px var(--primary-color);
+}
+
+[data-theme="cyberpunk"] .log-entry.error {
+    color: var(--error-text);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .log-entry.warning {
+    color: var(--warning-text);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .log-entry.info {
+    color: var(--info-text);
+    text-shadow: 0 0 10px rgba(150, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .log-entry.success {
+    color: var(--success-text);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .log-entry.progress {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .log-entry.notice {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(150, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .progress-bar {
+    background: var(--progress-gradient);
+    box-shadow: var(--neon-glow);
+}
+
+[data-theme="cyberpunk"] .status-indicator {
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+[data-theme="cyberpunk"] .status-indicator.online {
+    background: var(--success-color);
+    box-shadow: 0 0 10px var(--success-color);
+}
+
+[data-theme="cyberpunk"] .status-indicator.offline {
+    background: var(--error-color);
+    box-shadow: 0 0 10px var(--error-color);
+}
+
+[data-theme="cyberpunk"] .status-indicator.warning {
+    background: var(--warning-color);
+    box-shadow: 0 0 10px var(--warning-color);
+}
+
+[data-theme="cyberpunk"] .glitch {
+    text-shadow: 
+        0 0 10px var(--primary-color),
+        0 0 20px var(--primary-color),
+        0 0 30px var(--accent-color),
+        0 0 40px var(--accent-color);
+    animation: textFlicker 3s infinite alternate;
+}
+
+[data-theme="cyberpunk"] .progress-text {
+    color: var(--primary-color);
+    text-shadow: var(--text-shadow);
+}
+
+[data-theme="cyberpunk"] .status-box,
+[data-theme="cyberpunk"] .system-info {
+    border: 1px solid var(--border-color);
+    box-shadow: var(--neon-glow);
+}
+
+[data-theme="cyberpunk"] .status-box h3,
+[data-theme="cyberpunk"] .system-info h3 {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(150, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .status-item,
+[data-theme="cyberpunk"] .info-item {
+    border-bottom: 1px solid rgba(150, 0, 255, 0.2);
+}
+
+[data-theme="cyberpunk"] .status-label,
+[data-theme="cyberpunk"] .info-label {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+[data-theme="cyberpunk"] .status-value,
+[data-theme="cyberpunk"] .info-value {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Christmas Theme Styles */
+[data-theme="christmas"] .particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+[data-theme="christmas"] .particle {
+    position: fixed;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: snowfall 10s linear infinite;
+    z-index: 1000;
+    pointer-events: none;
+    font-size: 1.2em;
+    will-change: transform;
+}
+
+[data-theme="christmas"] .container,
+[data-theme="christmas"] .status-box,
+[data-theme="christmas"] .system-info,
+[data-theme="christmas"] .error-log {
+    position: relative;
+    z-index: 1;
+}
+
+[data-theme="christmas"] .particle:nth-child(3n) {
+    animation-duration: 8s;
+}
+
+[data-theme="christmas"] .particle:nth-child(3n + 1) {
+    animation-duration: 12s;
+}
+
+[data-theme="christmas"] .particle:nth-child(3n + 2) {
+    animation-duration: 15s;
+}
+
+[data-theme="christmas"] .status-box,
+[data-theme="christmas"] .system-info,
+[data-theme="christmas"] .error-log {
+    border: 1px solid rgba(255, 71, 71, 0.15);
+    box-shadow: 0 0 15px rgba(255, 71, 71, 0.1),
+                0 0 30px rgba(76, 175, 80, 0.05);
+    animation: christmasGlow 4s infinite alternate;
+}
+
+[data-theme="christmas"] .header {
+    border-bottom: 1px solid rgba(255, 71, 71, 0.15);
+    background: linear-gradient(
+        90deg,
+        rgba(8, 24, 32, 0.15) 0%,
+        rgba(255, 71, 71, 0.05) 50%,
+        rgba(76, 175, 80, 0.05) 100%
+    );
+}
+
+[data-theme="christmas"] button {
+    background: linear-gradient(45deg, #ff4747, #4caf50);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 71, 71, 0.2);
+}
+
+[data-theme="christmas"] button:hover {
+    background: linear-gradient(45deg, #4caf50, #ff4747);
+    box-shadow: 0 0 20px rgba(255, 71, 71, 0.4);
+    transform: translateY(-2px);
+}
+
+[data-theme="christmas"] .status-indicator.active {
+    background-color: #ff4747;
+    box-shadow: 0 0 15px #ff4747;
+    animation: christmasPulse 2s infinite;
+}
+
+[data-theme="christmas"] .logs-header h2,
+[data-theme="christmas"] .diagnostic-header h2 {
+    background: linear-gradient(45deg, #ff4747, #4caf50, #ffd700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 71, 71, 0.5),
+                 0 0 20px rgba(76, 175, 80, 0.3);
+    animation: christmasTextGlow 4s infinite alternate;
+}
+
+[data-theme="christmas"] .progress-bar {
+    background: linear-gradient(90deg, #ff4747, #4caf50, #ffd700);
+    box-shadow: 0 0 10px rgba(255, 71, 71, 0.3);
+    animation: christmasProgress 3s ease infinite;
+    background-size: 200% 100%;
+}
+
+[data-theme="christmas"] .particle {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: snowfall 10s linear infinite;
+}
+
+[data-theme="christmas"] .particle:nth-child(3n) {
+    animation-duration: 8s;
+}
+
+[data-theme="christmas"] .particle:nth-child(3n + 1) {
+    animation-duration: 12s;
+}
+
+[data-theme="christmas"] .particle:nth-child(3n + 2) {
+    animation-duration: 15s;
+}
+
+[data-theme="christmas"] .flying-objects-back,
+[data-theme="christmas"] .flying-objects-front {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+[data-theme="christmas"] .flying-objects-back {
+    z-index: 0;
+}
+
+[data-theme="christmas"] .flying-objects-front {
+    z-index: 1001;
+}
+
+[data-theme="christmas"] .flying-object {
+    position: fixed;
+    font-size: 2em;
+    opacity: 0;
+    will-change: transform;
+}
+
+/* Santa's sleigh - front layer */
+[data-theme="christmas"] .flying-object.sleigh {
+    --fly-y: 20vh;
+    --rotate-start: -5deg;
+    --rotate-end: 5deg;
+    animation: flyAcross 20s linear infinite;
+    font-size: 3em;
+}
+[data-theme="christmas"] .flying-object.sleigh::after {
+    content: '🎅';
+}
+
+/* Reindeer - back layer */
+[data-theme="christmas"] .flying-object.reindeer {
+    --fly-y: 15vh;
+    --rotate-start: 0deg;
+    --rotate-end: 0deg;
+    animation: flyAcross 25s linear infinite;
+    font-size: 2.5em;
+}
+[data-theme="christmas"] .flying-object.reindeer::after {
+    content: '🦌';
+}
+
+/* Gifts - both layers */
+[data-theme="christmas"] .flying-object.gift {
+    --fly-y: 40vh;
+    --rotate-start: -180deg;
+    --rotate-end: 180deg;
+    animation: flyAcross 15s linear infinite, bobUpDown 2s ease-in-out infinite;
+    font-size: 1.8em;
+}
+[data-theme="christmas"] .flying-object.gift::after {
+    content: '🎁';
+}
+
+/* Stars - back layer */
+[data-theme="christmas"] .flying-object.star {
+    --fly-y: 30vh;
+    --rotate-start: 0deg;
+    --rotate-end: 360deg;
+    animation: flyAcross 18s linear infinite;
+    font-size: 2em;
+}
+[data-theme="christmas"] .flying-object.star::after {
+    content: '⭐';
+}
+
+/* Delay variants */
+[data-theme="christmas"] .flying-object:nth-child(2) {
+    animation-delay: -5s;
+}
+[data-theme="christmas"] .flying-object:nth-child(3) {
+    animation-delay: -10s;
+}
+[data-theme="christmas"] .flying-object:nth-child(4) {
+    animation-delay: -15s;
+}
+
+/* Position variants */
+[data-theme="christmas"] .flying-object:nth-child(2) {
+    --fly-y: 35vh;
+}
+[data-theme="christmas"] .flying-object:nth-child(3) {
+    --fly-y: 25vh;
+}
+[data-theme="christmas"] .flying-object:nth-child(4) {
+    --fly-y: 45vh;
+}
+
+[data-theme="christmas"] .main-title {
+    color: #ff4747;
+    text-shadow: 0 0 15px rgba(255, 71, 71, 0.7),
+                 0 0 30px rgba(255, 71, 71, 0.5);
+    animation: christmasTextGlow 4s infinite alternate;
+}
+
+[data-theme="christmas"] .main-title span {
+    color: #ff4747;
+}

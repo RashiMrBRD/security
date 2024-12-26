@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Maintenance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+    <script src="theme-detector.js"></script>
+    <script src="favicon.js"></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="snowfall" class="snowfall"></div>
+    <div class="container">
+        <div class="header">
+            <div class="glitch" data-text="SYSTEM MAINTENANCE">SYSTEM MAINTENANCE</div>
+            <div class="scan-line"></div>
+            <p>Our elves are working hard to improve your experience.</p>
+        </div>
+        <div class="main-content">
+            <div class="left-side">
+                <div class="status-container">
+                    <div class="status-box">
+                        <h3><span class="status-indicator"></span>System Status</h3>
+                        <div class="status-message" id="status-message">
+                            <div class="message-content">Please wait while we analyze system performance...</div>
+                            <div class="system-info">
+                                <div class="status-details">
+                                    <div class="status-item">
+                                        <div class="status-label">CPU Load</div>
+                                        <div class="status-value" id="cpu-load">45%</div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-label">Memory Usage</div>
+                                        <div class="status-value" id="memory-usage">8.2GB</div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-label">Network ↓</div>
+                                        <div class="status-value" id="network-down">25.5 MB/s</div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-label">Network ↑</div>
+                                        <div class="status-value" id="network-up">12.3 MB/s</div>
+                                    </div>
+                                </div>
+                                <div class="mini-graph">
+                                    <div class="mini-graph-fill" id="system-load-graph"></div>
+                                </div>
+                            </div>
+                            <div class="message-progress"></div>
+                        </div>
+                    </div>
+                    <div class="status-box glitch-box">
+                        <h3>System Information</h3>
+                        <p><span class="info-label">Current Version:</span><span class="info-value">2024.1.1</span></p>
+                        <p><span class="info-label">Last Updated:</span><span class="info-value">2023-12-25</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="error-log">
+                    <pre id="log-content">
+<span class="log-entry info">[INFO] Starting system maintenance...</span>
+<span class="log-entry info">[INFO] Checking system components...</span>
+<span class="log-entry status">[STATUS] Updating core modules...</span>
+
+<div class="ascii-art" data-text="System Maintenance Protocol
+
+   W   W  EEEE  EEEE  BBBBB  FFFFF III L      EEEE  SSSS
+   W   W  E     E     B     B F      I  L     E     S
+   W W W  EEEE  EEEE  BBBBB  FFF    I  L      EEEE   SSS
+   W   W  E     E     B     B F      I  L     E         S
+   W   W  EEEE  EEEE  BBBBB  F      III LLLLL EEEE  SSSS
+                           Powered by Debian GNU/Linux 12
+
+╔══════════════════════════════════════════════════╗
+║            System Update In Progress             ║
+╚══════════════════════════════════════════════════╝">System Maintenance Protocol
+
+   W   W  EEEE  EEEE  BBBBB  FFFFF III L      EEEE  SSSS
+   W   W  E     E     B     B F      I  L     E     S
+   W W W  EEEE  EEEE  BBBBB  FFF    I  L      EEEE   SSS
+   W   W  E     E     B     B F      I  L     E         S
+   W   W  EEEE  EEEE  BBBBB  F      III LLLLL EEEE  SSSS
+                           Powered by Debian GNU/Linux 12
+
+╔══════════════════════════════════════════════════╗
+║            System Update In Progress             ║
+╚══════════════════════════════════════════════════╝</div>
+
+<span class="log-entry progress">[UPDATE] Updating system-core (2024.1.1) [156MB]</span>
+<span class="log-entry notice">[NOTICE] Synchronizing with Santa's workshop...</span>
+<span class="log-entry update">[UPDATE] Preparing for the new year...</span>
+<span class="log-entry holiday">[HOLIDAY_CODE: 0xSANTA24] All systems operational</span></pre>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="refresh-button" data-text="Verify System">Verify System</button>
+            <button data-text="Run Diagnostics">Run Diagnostics</button>
+            <button data-text="View Logs">View Logs</button>
+        </div>
+    </div>
+    <div class="flying-objects-back">
+        <div class="flying-object reindeer"></div>
+        <div class="flying-object reindeer"></div>
+        <div class="flying-object star"></div>
+        <div class="flying-object gift"></div>
+    </div>
+    <div class="flying-objects-front">
+        <div class="flying-object sleigh"></div>
+        <div class="flying-object gift"></div>
+        <div class="flying-object star"></div>
+        <div class="flying-object gift"></div>
+    </div>
+    <div class="diagnostic-popup" style="display: none;">
+        <div class="diagnostic-content">
+            <div class="diagnostic-header">
+                <h2 data-text="SYSTEM DIAGNOSTICS">SYSTEM DIAGNOSTICS</h2>
+                <button class="close-diagnostic" data-text="×">×</button>
+            </div>
+            <div class="diagnostic-body">
+                <div class="diagnostic-message"></div>
+                <div class="diagnostic-progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logs-popup" style="display: none;">
+        <div class="logs-content">
+            <div class="logs-header">
+                <h2 data-text="SYSTEM LOGS">SYSTEM LOGS</h2>
+                <button class="close-logs" data-text="×">×</button>
+            </div>
+            <div class="logs-body">
+                <div class="logs-filters">
+                    <button class="log-filter active" data-filter="all">All</button>
+                    <button class="log-filter" data-filter="error">Errors</button>
+                    <button class="log-filter" data-filter="warning">Warnings</button>
+                    <button class="log-filter" data-filter="info">Info</button>
+                </div>
+                <div class="logs-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Progress and completion time calculation
+        function updateProgress() {
+            const startTime = new Date('2024-12-25T18:00:00+08:00');
+            const endTime = new Date('2024-12-25T23:59:59+08:00');
+            const currentTime = new Date('2024-12-25T19:25:28+08:00'); // Using provided time
+
+            const totalDuration = endTime - startTime;
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(Math.max((elapsed / totalDuration) * 100, 0), 100);
+
+            // Update progress bar
+            const progressBar = document.getElementById('maintenance-progress');
+            progressBar.style.width = progress + '%';
+
+            // Calculate remaining time
+            const remainingTime = endTime - currentTime;
+            const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            // Update completion time
+            const completionTime = document.getElementById('completion-time');
+            completionTime.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            // Update maintenance status text
+            const statusText = document.querySelector('.status-box p');
+            if (progress < 25) {
+                statusText.textContent = 'Maintenance initializing...';
+            } else if (progress < 50) {
+                statusText.textContent = 'Core systems updating...';
+            } else if (progress < 75) {
+                statusText.textContent = 'Optimizing performance...';
+            } else if (progress < 100) {
+                statusText.textContent = 'Final checks in progress...';
+            } else {
+                statusText.textContent = 'Maintenance complete!';
+            }
+
+            // Pulse effect for status indicator
+            const statusIndicator = document.querySelector('.status-indicator');
+            statusIndicator.style.backgroundColor = progress === 100 ? '#4CAF50' : '#FFA500';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+            // Update progress every second
+            setInterval(updateProgress, 1000);
+        });
+    </script>
+
+    <script>
+        // Enhanced snowfall effect with cursor interaction
+        function createSnowfall() {
+            const snowfall = document.getElementById('snowfall');
+            const snowflakes = ['❄', '❅', '❆', '*', '•'];
+            const numberOfSnowflakes = 50;
+            let mouseX = 0;
+            let mouseY = 0;
+            const interactionDistance = 100; // Distance in pixels where cursor affects snowflakes
+            const maxDeflection = 50; // Maximum pixels a snowflake can be pushed
+
+            // Track mouse position
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                snowflake.style.opacity = Math.random();
+                snowflake.innerHTML = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+                
+                // Store original position
+                snowflake.originalLeft = parseFloat(snowflake.style.left);
+                
+                snowfall.appendChild(snowflake);
+
+                // Reset snowflake position when animation ends
+                snowflake.addEventListener('animationend', () => {
+                    snowflake.style.left = `${Math.random() * 100}vw`;
+                    snowflake.originalLeft = parseFloat(snowflake.style.left);
+                    snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                });
+
+                return snowflake;
+            }
+
+            // Create initial snowflakes
+            const snowflakeElements = Array.from({ length: numberOfSnowflakes }, createSnowflake);
+
+            // Update snowflake positions based on cursor
+            function updateSnowflakes() {
+                snowflakeElements.forEach(snowflake => {
+                    const rect = snowflake.getBoundingClientRect();
+                    const snowflakeX = rect.left + rect.width / 2;
+                    const snowflakeY = rect.top + rect.height / 2;
+
+                    // Calculate distance from cursor to snowflake
+                    const dx = mouseX - snowflakeX;
+                    const dy = mouseY - snowflakeY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < interactionDistance) {
+                        // Calculate deflection amount
+                        const deflection = (1 - distance / interactionDistance) * maxDeflection;
+                        const angle = Math.atan2(dy, dx);
+                        
+                        // Push snowflake away from cursor
+                        const pushX = -Math.cos(angle) * deflection;
+                        
+                        // Apply transform
+                        snowflake.style.transform = `translateX(${pushX}px)`;
+                    } else {
+                        // Reset transform when cursor is far away
+                        snowflake.style.transform = 'none';
+                    }
+                });
+
+                requestAnimationFrame(updateSnowflakes);
+            }
+
+            // Start the animation loop
+            updateSnowflakes();
+        }
+
+        // Initialize snowfall
+        createSnowfall();
+    </script>
+
+    <script>
+        // Typing effect for logs
+        function typeText(element, text, speed = 50, forceScroll = false) {
+            let index = 0;
+            element.classList.add('typing');
+            
+            return new Promise(resolve => {
+                const errorLog = document.querySelector('.error-log');
+                const logContent = document.getElementById('log-content');
+                
+                function addChar() {
+                    if (index < text.length) {
+                        element.textContent += text.charAt(index);
+                        index++;
+                        
+                        // Calculate if the element is partially or fully out of view
+                        const elementRect = element.getBoundingClientRect();
+                        const containerRect = errorLog.getBoundingClientRect();
+                        const isPartiallyHidden = elementRect.bottom > containerRect.bottom;
+                        
+                        // Only scroll enough to make the element fully visible
+                        if (forceScroll || (!errorLog.matches(':hover') && isPartiallyHidden)) {
+                            const scrollAmount = elementRect.bottom - containerRect.bottom;
+                            errorLog.scrollTop += scrollAmount;
+                        }
+                        
+                        setTimeout(addChar, speed);
+                    } else {
+                        element.classList.remove('typing');
+                        resolve();
+                    }
+                }
+                addChar();
+            });
+        }
+
+        // Simulate package installation
+        async function simulateInstallation() {
+            const logContent = document.getElementById('log-content');
+            const errorLog = document.querySelector('.error-log');
+            logContent.innerHTML = ''; // Clear existing content
+            errorLog.scrollTop = 0; // Reset scroll position
+
+            let lineCount = 0;
+            let pastDiagnostics = false;
+
+            const packages = [
+                { name: 'system-core', version: '2024.1.1', size: '156MB' },
+                { name: 'holiday-module', version: '12.25.1', size: '42MB' },
+                { name: 'performance-utils', version: '3.2.1', size: '89MB' },
+                { name: 'security-updates', version: '1.9.0', size: '123MB' }
+            ];
+
+            const userMessages = [
+                '[INFO] Please remain on this page while we diagnose the issue...',
+                '[NOTICE] Our team is working to resolve the maintenance requirements',
+                '[UPDATE] Analyzing system performance metrics...',
+                '[INFO] This process may take several minutes to complete',
+                '[NOTICE] The page will automatically refresh when maintenance is complete',
+                '[UPDATE] Running diagnostic checks on core systems...',
+                '[INFO] Thank you for your patience while we optimize the system',
+                '[NOTICE] Maintenance is proceeding as scheduled'
+            ];
+
+            let messageIndex = 0;
+            const showUserMessage = async () => {
+                if (messageIndex < userMessages.length) {
+                    const messageEntry = document.createElement('span');
+                    messageEntry.className = 'log-entry info';
+                    logContent.appendChild(messageEntry);
+                    
+                    // After diagnostics, force scroll every two lines
+                    if (pastDiagnostics) {
+                        lineCount++;
+                        await typeText(messageEntry, userMessages[messageIndex], 50, lineCount % 2 === 0);
+                    } else {
+                        await typeText(messageEntry, userMessages[messageIndex]);
+                    }
+                    messageIndex++;
+                }
+            };
+
+            // Initial messages before diagnostics
+            const scanEntry = document.createElement('span');
+            scanEntry.className = 'log-entry info';
+            logContent.appendChild(scanEntry);
+            await typeText(scanEntry, '[INFO] Initiating system maintenance protocol...');
+            await showUserMessage();
+            await new Promise(r => setTimeout(r, 1000));
+
+            const dependencyEntry = document.createElement('span');
+            dependencyEntry.className = 'log-entry info';
+            logContent.appendChild(dependencyEntry);
+            await typeText(dependencyEntry, '[INFO] Analyzing system dependencies...');
+            await showUserMessage();
+            await new Promise(r => setTimeout(r, 1500));
+
+            // ASCII Art
+            const asciiArt = document.createElement('div');
+            asciiArt.className = 'ascii-art';
+            asciiArt.setAttribute('data-text', `System Maintenance Protocol
+
+   W   W  EEEE  EEEE  BBBBB  FFFFF III L      EEEE  SSSS
+   W   W  E     E     B     B F      I  L     E     S
+   W W W  EEEE  EEEE  BBBBB  FFF    I  L      EEEE   SSS
+   W   W  E     E     B     B F      I  L     E         S
+   W   W  EEEE  EEEE  BBBBB  F      III LLLLL EEEE  SSSS
+                           Powered by Debian GNU/Linux 12
+
+╔══════════════════════════════════════════════════╗
+║            System Update In Progress             ║
+╚══════════════════════════════════════════════════╝`);
+            asciiArt.textContent = asciiArt.getAttribute('data-text');
+            logContent.appendChild(asciiArt);
+
+            // System diagnostics - mark the start of two-line scrolling
+            const diagEntry = document.createElement('span');
+            diagEntry.className = 'log-entry status';
+            logContent.appendChild(diagEntry);
+            await typeText(diagEntry, '[STATUS] Running system diagnostics...');
+            pastDiagnostics = true;
+            await showUserMessage();
+            await new Promise(r => setTimeout(r, 1200));
+
+            // Update packages with two-line scrolling
+            for (const pkg of packages) {
+                lineCount++;
+                const updateEntry = document.createElement('span');
+                updateEntry.className = 'log-entry progress';
+                logContent.appendChild(updateEntry);
+                await typeText(updateEntry, `[UPDATE] Updating <span class="package-name">${pkg.name}</span> <span class="version-number">(${pkg.version})</span> <span class="size-info">[${pkg.size}]</span>`, 50, lineCount % 2 === 0);
+                
+                const progressLine = document.createElement('div');
+                progressLine.className = 'progress-line';
+                progressLine.innerHTML = `
+                    <div class="progress-bar-mini">
+                        <div class="fill"></div>
+                    </div>
+                    <span class="loading-dots">Updating</span>
+                `;
+                updateEntry.appendChild(progressLine);
+
+                // Show user message between updates
+                await showUserMessage();
+
+                // Simulate progress
+                const fill = progressLine.querySelector('.fill');
+                await new Promise(resolve => {
+                    let progress = 0;
+                    const interval = setInterval(() => {
+                        progress += Math.random() * 5;
+                        if (progress >= 100) {
+                            progress = 100;
+                            clearInterval(interval);
+                            resolve();
+                        }
+                        fill.style.width = `${progress}%`;
+                    }, 100);
+                });
+            }
+
+            // Final messages
+            lineCount++;
+            const completeEntry = document.createElement('span');
+            completeEntry.className = 'log-entry notice';
+            logContent.appendChild(completeEntry);
+            await typeText(completeEntry, '[NOTICE] System update phase complete', 50, lineCount % 2 === 0);
+
+            lineCount++;
+            const refreshEntry = document.createElement('span');
+            refreshEntry.className = 'log-entry info';
+            logContent.appendChild(refreshEntry);
+            await typeText(refreshEntry, '[INFO] The page will refresh automatically when all maintenance tasks are complete', 50, lineCount % 2 === 0);
+
+            lineCount++;
+            const holidayEntry = document.createElement('span');
+            holidayEntry.className = 'log-entry holiday';
+            logContent.appendChild(holidayEntry);
+            await typeText(holidayEntry, '[HOLIDAY_CODE: 0xSANTA24] Optimizing festive features for the season 🎄', 50, lineCount % 2 === 0);
+
+            // Restart simulation after delay
+            setTimeout(simulateInstallation, 5000);
+        }
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createSnowfall();
+            updateProgress();
+            initializeErrorLog();
+            simulateInstallation();
+            
+            // Update intervals
+            setInterval(updateProgress, 1000);
+        });
+    </script>
+
+    <script>
+        // Error log scroll handling
+        function initializeErrorLog() {
+            const errorLog = document.querySelector('.error-log');
+            let userScrolled = false;
+            let scrollTimeout;
+
+            // Handle manual scrolling
+            errorLog.addEventListener('scroll', () => {
+                userScrolled = true;
+                
+                // Clear existing timeout
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+
+                // Reset userScrolled after 2 seconds of no scrolling
+                scrollTimeout = setTimeout(() => {
+                    userScrolled = false;
+                    scrollTimeout = null;
+                }, 2000);
+            });
+
+            // Add new log entry with auto-scroll
+            window.addLogEntry = async (text, className = 'info') => {
+                const entry = document.createElement('span');
+                entry.className = `log-entry ${className}`;
+                logContent.appendChild(entry);
+                await typeText(entry, text);
+                
+                // Scroll to bottom if user hasn't manually scrolled
+                if (!userScrolled && !errorLog.matches(':hover')) {
+                    errorLog.scrollTop = errorLog.scrollHeight;
+                }
+            };
+        }
+    </script>
+
+    <script>
+        // System status updates
+        function updateSystemStatus() {
+            const statusMessages = [
+                "<strong>System Analysis:</strong> Please wait while we diagnose the current situation",
+                "<strong>Team Update:</strong> Our engineers are working to resolve the maintenance requirements",
+                "<strong>Progress:</strong> Running essential system checks and optimizations",
+                "<strong>Status:</strong> Performing scheduled maintenance tasks",
+                "<strong>Notice:</strong> The page will refresh automatically once maintenance is complete",
+                "<strong>Update:</strong> Optimizing system performance for better user experience",
+                "<strong>Security:</strong> Implementing latest security protocols and updates",
+                "<strong>Network:</strong> Verifying connection stability across all services",
+                "<strong>Maintenance:</strong> Updating core system components",
+                "<strong>Progress:</strong> Running final system verifications",
+                "<strong>Holiday Update:</strong> Optimizing festive features for the season 🎄",
+                "<strong>System:</strong> Calibrating performance parameters",
+                "<strong>Notice:</strong> Thank you for your patience during this maintenance",
+                "<strong>Status:</strong> Ensuring all systems are functioning correctly",
+                "<strong>Update:</strong> Making final adjustments to system settings"
+            ];
+
+            // Update status message every 10 seconds
+            if (!window.messageInterval) {
+                let messageIndex = 0;
+                const messageElement = document.querySelector('.message-content');
+                
+                const updateMessage = () => {
+                    messageElement.style.opacity = '0';
+                    setTimeout(() => {
+                        messageElement.innerHTML = statusMessages[messageIndex];
+                        messageElement.style.opacity = '1';
+                        messageIndex = (messageIndex + 1) % statusMessages.length;
+                    }, 500);
+                };
+
+                window.messageInterval = setInterval(updateMessage, 10000);
+                messageElement.innerHTML = statusMessages[0];
+            }
+
+            // CPU Load simulation (30-80%)
+            const cpuLoad = Math.floor(30 + Math.random() * 50);
+            document.getElementById('cpu-load').textContent = `${cpuLoad}%`;
+
+            // Memory usage simulation (4-12GB of 16GB)
+            const memoryUsage = (4 + Math.random() * 8).toFixed(1);
+            document.getElementById('memory-usage').textContent = `${memoryUsage}GB`;
+
+            // Network traffic simulation
+            const networkDown = (Math.random() * 50 + 10).toFixed(1);
+            const networkUp = (Math.random() * 20 + 5).toFixed(1);
+            document.getElementById('network-down').textContent = `${networkDown} MB/s`;
+            document.getElementById('network-up').textContent = `${networkUp} MB/s`;
+
+            // Update system load graph
+            const graphFill = document.querySelector('.mini-graph-fill');
+            const loadPercentage = Math.floor(20 + Math.random() * 60);
+            graphFill.style.width = `${loadPercentage}%`;
+
+            document.querySelectorAll('.status-item').forEach(item => {
+                const value = parseInt(item.querySelector('.status-value').textContent);
+                if (value > 50) {
+                    item.style.borderColor = 'rgba(255, 87, 34, 0.4)';
+                } else {
+                    item.style.borderColor = 'rgba(32, 128, 32, 0.2)';
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createSnowfall();
+            updateSystemStatus();
+            simulateInstallation();
+            
+            // Update intervals
+            setInterval(updateSystemStatus, 2000);
+        });
+    </script>
+
+    <script>
+        // Theme management
+        function setTheme() {
+            const date = new Date('2024-12-25T18:39:44+08:00');
+            const month = date.getMonth();
+            let theme;
+
+            switch(month) {
+                case 0:  // January
+                    theme = 'new-year';
+                    break;
+                case 1:  // February
+                    theme = 'valentine';
+                    break;
+                case 2:  // March
+                case 3:  // April
+                case 4:  // May
+                    theme = 'spring';
+                    break;
+                case 5:  // June
+                case 6:  // July
+                case 7:  // August
+                    theme = 'summer';
+                    break;
+                case 8:  // September
+                case 9:  // October
+                case 10: // November
+                    theme = 'autumn';
+                    break;
+                case 11: // December
+                    theme = 'christmas';
+                    break;
+                default:
+                    theme = 'default';
+            }
+
+            document.documentElement.setAttribute('data-theme', theme);
+            
+            // Update particle characters based on theme
+            const themeStyle = getComputedStyle(document.documentElement);
+            const particleChars = themeStyle.getPropertyValue('--particle-characters')
+                                          .replace(/'/g, '')
+                                          .split(',');
+            
+            // Update existing particles with new theme characters
+            const particles = document.querySelectorAll('.snowflake');
+            particles.forEach(particle => {
+                particle.innerHTML = particleChars[Math.floor(Math.random() * particleChars.length)];
+            });
+        }
+
+        // Initialize theme
+        setTheme();
+
+        // Update theme at midnight
+        const now = new Date('2024-12-25T18:39:44+08:00');
+        const tomorrow = new Date(now);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(0, 0, 0, 0);
+        const timeUntilMidnight = tomorrow - now;
+
+        setTimeout(() => {
+            setTheme();
+            // After first update, check every 24 hours
+            setInterval(setTheme, 24 * 60 * 60 * 1000);
+        }, timeUntilMidnight);
+    </script>
+
+    <script>
+        // Add event listener for refresh button
+        document.addEventListener('DOMContentLoaded', () => {
+            const refreshButton = document.querySelector('.refresh-button');
+            
+            refreshButton.addEventListener('click', () => {
+                // Add glitch effect
+                refreshButton.classList.add('clicked');
+                
+                // Change button text
+                refreshButton.textContent = 'Refreshing...';
+                
+                // Disable button
+                refreshButton.disabled = true;
+                
+                // Add a small delay for the effect
+                setTimeout(() => {
+                    // Refresh the page
+                    window.location.reload();
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

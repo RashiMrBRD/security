@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  maintenance:
+    build: .
+    container_name: maintenance-page
+    ports:
+      - "8080:80"  # Change the port as needed
+    restart: unless-stopped
+    environment:
+      - ARGO_TUNNEL_ENDPOINT=http://your-argo-tunnel-endpoint  # Replace with your endpoint
+    networks:
+      - maintenance-net
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/healthcheck.sh"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+networks:
+  maintenance-net:
+    driver: bridge
