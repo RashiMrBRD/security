@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  maintenance:
+    build:
+      context: ..  # Build from parent directory
+      dockerfile: docker/Dockerfile
+      args:
+        BUILD_DATE: '${BUILD_DATE:-20241226}'
+    container_name: maintenance-page
+    ports:
+      - "8080:80"  # Change the port as needed
+    restart: unless-stopped
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+    networks:
+      - maintenance-net
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/healthcheck.sh"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+networks:
+  maintenance-net:
+    driver: bridge

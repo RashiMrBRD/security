@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  website:
+    build: .
+    container_name: promo-website
+    ports:
+      - "8080:80"  # Map container port 80 to host port 8080
+    volumes:
+      - ./:/usr/share/nginx/html  # Mount current directory to nginx html directory
+    restart: unless-stopped
