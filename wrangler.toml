@@ -2,9 +2,9 @@ name = "maintenance-page"
 main = "maintenance-worker.js"
 compatibility_date = "2023-12-26"
 
-# Configure your account ID and zone ID
-account_id = "your-account-id"
-# workers_dev = true  # Enable for testing on workers.dev subdomain
+# Configure account ID from environment
+account_id = "${CF_ACCOUNT_ID}"
+workers_dev = true  # Enable for testing on workers.dev subdomain
 
 # Variables
 [vars]
@@ -12,12 +12,13 @@ MAINTENANCE_MODE = false
 
 # Production environment
 [env.production]
-# Add your domain bindings here
+# Routes are configured via environment variables
 routes = [
-    { pattern = "*.yourdomain.com/*", zone_id = "your-zone-id" },
-    { pattern = "yourdomain.com/*", zone_id = "your-zone-id" }
+    { pattern = "*.rashlink.eu.org/*", zone_id = "${CF_ZONE_ID}" },
+    { pattern = "rashlink.eu.org/*", zone_id = "${CF_ZONE_ID}" }
 ]
 
 # Development environment
 [env.development]
+workers_dev = true
 vars = { MAINTENANCE_MODE = true }
